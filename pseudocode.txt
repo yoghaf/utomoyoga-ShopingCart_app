@@ -1,0 +1,35 @@
+
+START PROGRAM
+READ AND WRITE "listbarang" with array
+STORE "listbarang" with [{kode:"1",nama:"A",harga:"20000",...}]
+READ AND WRITE "kode" with string
+READ AND WRITE "nama" with string
+READ AND WRITE "harga" with number
+FOR "i" from 0 on listbarang
+	listbarang[i]endline
+END FOR
+READ AND WRITE "pilihanuser" with string
+FUNCTION tambahkechart()
+FOR "i" listbarang++
+	READ AND WRITE "listbeli" with array
+	STORE "listbeli" with "listbarang[i]"
+	READ AND WRITE "totalharga" with array
+	STORE "totalharga" with"totalharga"+listbarang.harga[i]"
+	READ AND WRITE "jmlbrg" with number
+	STORE "jmlbrg" with "i"
+END FOR 
+READ AND WRITE "lanjut" with string
+STORE "lanjut" with yes
+IF "lanjut" = yes
+	PRINT "silahkan ke pembayaran"
+ELSE
+	 go to listbarang
+END FUNCTION
+READ AND WRITE "total" with number
+STORE "total" with totalharga*jmlbrg
+READ AND WRITE "bayar" with yes
+IF "bayar " = yes
+	PRINT "PEMBAYARAN BERHASIL"
+ELSE
+	go to listbarang
+END PROGRAM
